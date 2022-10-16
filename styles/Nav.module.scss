@@ -1,0 +1,52 @@
+.navContainer {
+  background-color: #16181b;
+  .navWrapper {
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+
+    .navLogo {
+      h2 {
+        font-size: 2rem;
+        padding: 0;
+        margin: 0.5rem;
+        cursor: pointer;
+
+        span {
+          color: #cb2a30;
+          font-size: 2.65rem;
+        }
+      }
+    }
+
+    .navLinks {
+      ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+
+        li {
+          margin-right: 1.85rem;
+          font-size: 1.05rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: 0.2s all ease-in-out;
+        }
+
+        li:hover {
+          color: #396ddd;
+        }
+      }
+    }
+
+    .eflLogo {
+      width: 120px;
+      cursor: pointer;
+    }
+  }
+}
