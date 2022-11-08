@@ -1,0 +1,74 @@
+.standingsContainer {
+  max-width: 1400px;
+  margin: auto;
+  .standingsWrapper {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    h1 {
+      font-size: 2.65rem;
+      margin-top: 0;
+      margin-bottom: 3rem;
+    }
+    .standingsWrap {
+      h2 {
+        font-size: 2rem;
+        margin-top: 0;
+      }
+
+      .standingsTables {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .standingsTable {
+          margin-top: 2rem;
+          background-color: #fff;
+          padding: 2rem;
+          font-weight: 700 !important;
+
+          .standingsHeader {
+            display: flex;
+            align-items: center;
+
+            .all,
+            .home,
+            .away {
+              padding: 0.4rem 1.75rem;
+              margin-left: 2.25rem;
+              background-color: #fff;
+              border-radius: 20px;
+              margin-bottom: 1.5rem;
+              cursor: pointer;
+              font-size: 1rem;
+              border: 1px solid rgb(188, 188, 188);
+              font-weight: 500;
+              transition: 0.2s all ease-in-out;
+            }
+
+            .all:hover,
+            .home:hover,
+            .away:hover {
+              border: 1px solid #000;
+            }
+          }
+
+          tr {
+            font-weight: 700 !important;
+          }
+          .pos {
+            font-weight: 700 !important;
+            font-size: 2rem;
+          }
+          td {
+            padding: 1.15rem 3.5rem;
+            border-bottom: 1px solid rgb(145, 145, 145);
+            border-right: 1px solid red;
+            font-weight: 400;
+            font-size: 1.15rem;
+          }
+        }
+      }
+    }
+  }
+}

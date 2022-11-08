@@ -1,14 +1,15 @@
-import Standings from "../components/Standings";
+import styles from "../styles/homeGames.module.scss";
+import HomeStandings from "../components/HomeStandings";
 
-function standings({ leagueStats }) {
+function home({ homeStats }) {
   return (
     <>
-      <Standings leagueStats={leagueStats} />
+      <HomeStandings homeStats={homeStats} />
     </>
   );
 }
 
-export default standings;
+export default home;
 
 export async function getStaticProps() {
   const res = await fetch(
@@ -19,7 +20,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      leagueStats: stats,
+      homeStats: stats,
     },
   };
 }

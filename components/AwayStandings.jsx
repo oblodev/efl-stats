@@ -1,22 +1,23 @@
-import styles from "../styles/Standings.module.scss";
+import styles from "../styles/AwayStandings.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-function Standings({ leagueStats }) {
-  console.log(leagueStats);
+function AwayStandings({ awayStats }) {
+  console.log(awayStats);
 
-  const leagueDataCentral = leagueStats.results.overall.tables[0].rows;
-  const leagueDataSouth = leagueStats.results.overall.tables[1].rows;
-  const leagueDataNorth = leagueStats.results.overall.tables[2].rows;
+  const leagueDataCentral = awayStats.results.away.tables[0].rows;
+  const leagueDataSouth = awayStats.results.away.tables[1].rows;
+  const leagueDataNorth = awayStats.results.away.tables[2].rows;
 
-  const leagueDataCentralName = leagueStats.results.overall.tables[0].groupname;
-  const leagueDataSouthName = leagueStats.results.overall.tables[1].groupname;
-  const leagueDataNorthName = leagueStats.results.overall.tables[2].groupname;
+  const leagueDataCentralName = awayStats.results.away.tables[0].groupname;
+  const leagueDataSouthName = awayStats.results.away.tables[1].groupname;
+  const leagueDataNorthName = awayStats.results.away.tables[2].groupname;
 
   return (
     <div className={styles.standingsContainer}>
       <div className={styles.standingsWrapper}>
-        <h1>EFL Standings - SEASON 2022</h1>
+        <h1>EFL Standings - SEASON 2022 </h1>
+        <h2>Away Standings</h2>
         <div className={styles.standingsWrap}>
           <div className={styles.standingsTables}>
             <div className={styles.standingsTable}>
@@ -27,9 +28,6 @@ function Standings({ leagueStats }) {
                 </Link>
                 <Link href="/home">
                   <button className={styles.home}>Home</button>
-                </Link>
-                <Link href="/away">
-                  <button className={styles.away}>Away</button>
                 </Link>
               </div>
               <table>
@@ -45,7 +43,7 @@ function Standings({ leagueStats }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {leagueStats ? (
+                  {awayStats ? (
                     leagueDataNorth.map((teamStat) => (
                       <tr key={teamStat.team.id}>
                         <td className="pos">{teamStat.pos}</td>
@@ -79,9 +77,6 @@ function Standings({ leagueStats }) {
                 <Link href="/home">
                   <button className={styles.home}>Home</button>
                 </Link>
-                <Link href="/away">
-                  <button className={styles.away}>Away</button>
-                </Link>
               </div>
               <table>
                 <thead>
@@ -96,7 +91,7 @@ function Standings({ leagueStats }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {leagueStats ? (
+                  {awayStats ? (
                     leagueDataCentral.map((teamStat) => (
                       <tr key={teamStat.team.id}>
                         <td className="pos">{teamStat.pos}</td>
@@ -130,9 +125,6 @@ function Standings({ leagueStats }) {
                 <Link href="/home">
                   <button className={styles.home}>Home</button>
                 </Link>
-                <Link href="/away">
-                  <button className={styles.away}>Away</button>
-                </Link>
               </div>
               <table>
                 <thead>
@@ -147,7 +139,7 @@ function Standings({ leagueStats }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {leagueStats ? (
+                  {awayStats ? (
                     leagueDataSouth.map((teamStat) => (
                       <tr key={teamStat.team.id}>
                         <td className="pos">{teamStat.pos}</td>
@@ -179,4 +171,4 @@ function Standings({ leagueStats }) {
   );
 }
 
-export default Standings;
+export default AwayStandings;

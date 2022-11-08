@@ -1,22 +1,23 @@
-import styles from "../styles/Standings.module.scss";
+import styles from "../styles/HomeStandings.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-function Standings({ leagueStats }) {
-  console.log(leagueStats);
+function HomeStandings({ homeStats }) {
+  console.log(homeStats);
 
-  const leagueDataCentral = leagueStats.results.overall.tables[0].rows;
-  const leagueDataSouth = leagueStats.results.overall.tables[1].rows;
-  const leagueDataNorth = leagueStats.results.overall.tables[2].rows;
+  const leagueDataCentral = homeStats.results.home.tables[0].rows;
+  const leagueDataSouth = homeStats.results.home.tables[1].rows;
+  const leagueDataNorth = homeStats.results.home.tables[2].rows;
 
-  const leagueDataCentralName = leagueStats.results.overall.tables[0].groupname;
-  const leagueDataSouthName = leagueStats.results.overall.tables[1].groupname;
-  const leagueDataNorthName = leagueStats.results.overall.tables[2].groupname;
+  const leagueDataCentralName = homeStats.results.home.tables[0].groupname;
+  const leagueDataSouthName = homeStats.results.home.tables[1].groupname;
+  const leagueDataNorthName = homeStats.results.home.tables[2].groupname;
 
   return (
     <div className={styles.standingsContainer}>
       <div className={styles.standingsWrapper}>
-        <h1>EFL Standings - SEASON 2022</h1>
+        <h1>EFL Standings - SEASON 2022 </h1>
+        <h2>Home Standings</h2>
         <div className={styles.standingsWrap}>
           <div className={styles.standingsTables}>
             <div className={styles.standingsTable}>
@@ -25,9 +26,7 @@ function Standings({ leagueStats }) {
                 <Link href="/standings">
                   <button className={styles.all}>All</button>
                 </Link>
-                <Link href="/home">
-                  <button className={styles.home}>Home</button>
-                </Link>
+
                 <Link href="/away">
                   <button className={styles.away}>Away</button>
                 </Link>
@@ -45,7 +44,7 @@ function Standings({ leagueStats }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {leagueStats ? (
+                  {homeStats ? (
                     leagueDataNorth.map((teamStat) => (
                       <tr key={teamStat.team.id}>
                         <td className="pos">{teamStat.pos}</td>
@@ -76,9 +75,7 @@ function Standings({ leagueStats }) {
                 <Link href="/standings">
                   <button className={styles.all}>All</button>
                 </Link>
-                <Link href="/home">
-                  <button className={styles.home}>Home</button>
-                </Link>
+
                 <Link href="/away">
                   <button className={styles.away}>Away</button>
                 </Link>
@@ -96,7 +93,7 @@ function Standings({ leagueStats }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {leagueStats ? (
+                  {homeStats ? (
                     leagueDataCentral.map((teamStat) => (
                       <tr key={teamStat.team.id}>
                         <td className="pos">{teamStat.pos}</td>
@@ -127,9 +124,7 @@ function Standings({ leagueStats }) {
                 <Link href="/standings">
                   <button className={styles.all}>All</button>
                 </Link>
-                <Link href="/home">
-                  <button className={styles.home}>Home</button>
-                </Link>
+
                 <Link href="/away">
                   <button className={styles.away}>Away</button>
                 </Link>
@@ -147,7 +142,7 @@ function Standings({ leagueStats }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {leagueStats ? (
+                  {homeStats ? (
                     leagueDataSouth.map((teamStat) => (
                       <tr key={teamStat.team.id}>
                         <td className="pos">{teamStat.pos}</td>
@@ -179,4 +174,4 @@ function Standings({ leagueStats }) {
   );
 }
 
-export default Standings;
+export default HomeStandings;

@@ -1,14 +1,15 @@
-import Standings from "../components/Standings";
+import styles from "../styles/awayGames.module.scss";
+import AwayStandings from "../components/AwayStandings";
 
-function standings({ leagueStats }) {
+function away({ awayStats }) {
   return (
     <>
-      <Standings leagueStats={leagueStats} />
+      <AwayStandings awayStats={awayStats} />
     </>
   );
 }
 
-export default standings;
+export default away;
 
 export async function getStaticProps() {
   const res = await fetch(
@@ -19,7 +20,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      leagueStats: stats,
+      awayStats: stats,
     },
   };
 }
